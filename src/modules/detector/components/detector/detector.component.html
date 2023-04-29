@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="detector-input">
+        <tui-input [formControl]="newsInput">Input news</tui-input>
+    </div>
+    <div class="detector-output">
+        <div *ngIf="isTrue" class="true-output"></div>
+        <div *ngIf="!isTrue" class="fake-output"></div>
+    </div>
+</div>
