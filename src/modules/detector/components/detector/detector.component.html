@@ -1,9 +1,26 @@
 <div class="container">
     <div class="detector-input">
-        <tui-input [formControl]="newsInput">Input news</tui-input>
+        <tui-text-area class="text-area tui-col_md-8" [formControl]="newsInput">Input news</tui-text-area>
+        <button tuiButton
+        type="button"
+        class="tui-space_right-3 tui-space_bottom-3"
+        (click)="onSubmit()">Detect</button>
     </div>
     <div class="detector-output">
-        <div *ngIf="isTrue" class="true-output"></div>
-        <div *ngIf="!isTrue" class="fake-output"></div>
+        <tui-badge
+            size="l"
+            *ngIf="isTrue && showResult"
+            status="success"
+            value="True"
+            class="tui-space_right-2 animate"
+        ></tui-badge>
+        <tui-badge
+            size="l"
+            *ngIf="!isTrue && showResult"
+            status="error"
+            value="Fake"
+            class="tui-space_right-2 animate"
+        ></tui-badge>
     </div>
+    
 </div>

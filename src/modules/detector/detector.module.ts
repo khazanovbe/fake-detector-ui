@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { DetectorComponent } from './components/detector/detector.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './routes';
-import { TuiInputModule } from '@taiga-ui/kit';
+import { TuiBadgeModule, TuiInputModule, TuiTextAreaModule } from '@taiga-ui/kit';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TuiButtonModule, TuiLoaderModule } from '@taiga-ui/core';
 
 
 
@@ -15,8 +16,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    TuiInputModule,
-    ReactiveFormsModule
-  ],
+    ReactiveFormsModule,
+    TuiButtonModule,
+    TuiBadgeModule,
+    TuiTextAreaModule
+  ]
 })
 export class DetectorModule { }

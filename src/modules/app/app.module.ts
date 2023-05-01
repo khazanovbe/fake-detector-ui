@@ -9,6 +9,7 @@ import { TuiInputModule } from "@taiga-ui/kit";
 import { RouterModule } from "@angular/router";
 import { routes } from "./routes";
 import { DetectorModule } from "../detector/detector.module";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DetectorModule } from "../detector/detector.module";
       TuiDialogModule,
       TuiAlertModule,
       TuiInputModule,
+      HttpClientModule,
 ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent]
