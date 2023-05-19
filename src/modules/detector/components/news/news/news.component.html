@@ -1,0 +1,38 @@
+<h2>Search news</h2>
+<div class="news-search-form">
+    <tui-select [formControl]="category">
+        Category
+        <input tuiTextfield placeholder="Choose your hero" />
+        <tui-data-list-wrapper *tuiDataList [items]="categories"></tui-data-list-wrapper>
+    </tui-select>
+    <button tuiButton type="button" class="tui-space_right-3 tui-space_bottom-3"
+        (click)="onSubmit()">Search</button>
+</div>
+
+<div class="news">
+<button *ngFor="let item of news; index as i" tuiAction type="button"
+    class="action news-item">
+    <div class="news-item-wrapper">
+        <p>{{item.description}}</p>
+        <div class="badges">
+            <tui-badge class="news-source" (click)="goTolink(item.url)" [size]="'l'" [value]="item.source.name"></tui-badge>
+            <tui-badge
+                size="m"
+                *ngIf="item.detected && item.isTrue"
+                status="success"
+                value="True"
+                class="tui-space_right-2 animate"
+            ></tui-badge>
+            <tui-badge
+                size="m"
+                *ngIf="item.detected && !item.isTrue"
+                status="error"
+                value="Fake"
+                class="tui-space_right-2 animate"
+            ></tui-badge>
+        </div>
+    </div>
+    <button tuiButton type="button" class="tui-space_right-3 tui-space_top-3 tui-space_bottom-3"
+        (click)="onDetectNews(item.description,i)">Detect</button>
+</button>
+</div>

@@ -3,15 +3,17 @@ import { CommonModule } from '@angular/common';
 import { DetectorComponent } from './components/detector/detector.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './routes';
-import { TuiBadgeModule, TuiInputModule, TuiTextAreaModule } from '@taiga-ui/kit';
-import { ReactiveFormsModule } from '@angular/forms';
+import { TuiActionModule, TuiBadgeModule, TuiDataListWrapperModule, TuiInputModule, TuiSelectModule, TuiTextAreaModule } from '@taiga-ui/kit';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TuiButtonModule, TuiLoaderModule } from '@taiga-ui/core';
+import { NewsComponent } from './components/news/news/news.component';
 
 
 
 @NgModule({
   declarations: [
-    DetectorComponent
+    DetectorComponent,
+    NewsComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,12 @@ import { TuiButtonModule, TuiLoaderModule } from '@taiga-ui/core';
     ReactiveFormsModule,
     TuiButtonModule,
     TuiBadgeModule,
-    TuiTextAreaModule
+    TuiTextAreaModule,
+    TuiSelectModule,
+    TuiDataListWrapperModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TuiActionModule
   ]
 })
 export class DetectorModule { }
